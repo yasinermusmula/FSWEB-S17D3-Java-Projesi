@@ -15,8 +15,8 @@ public class ZooKoalaValidation {
     private static final String ANIMAL_CREDENTIALS_NOT_VALID = "Koala Credentials are not valid";
 
 
-    public static void isIdNotValid(int id) {
-        if (id<0){
+    public static void isIdNotValid(Integer id) {
+        if (id == null || id<0){
             throw new ZooException(ID_IS_NOT_VALID, HttpStatus.BAD_REQUEST);
         }
     }

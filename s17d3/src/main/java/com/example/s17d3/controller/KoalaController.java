@@ -3,6 +3,7 @@ package com.example.s17d3.controller;
 import com.example.s17d3.entity.Koala;
 import com.example.s17d3.validation.ZooKoalaValidation;
 import jakarta.annotation.PostConstruct;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -28,6 +29,7 @@ public class KoalaController {
     }
 
     @GetMapping("/koalas")
+    @ResponseStatus(HttpStatus.OK)
     public List<Koala> findAll(){
         return koalaMap.values().stream().toList();
     }
